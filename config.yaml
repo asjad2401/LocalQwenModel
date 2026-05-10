@@ -1,0 +1,23 @@
+llm:
+  provider: ollama          # ollama | anthropic | openai
+  model: qwen3:8b
+  base_url: http://localhost:11434
+  api_key: ""               # set for anthropic / openai
+  temperature: 0.2
+  max_tokens: 4096
+
+# embeddings can use a different provider than llm
+# e.g. local ollama embeddings + anthropic for generation
+embeddings:
+  provider: ollama
+  model: nomic-embed-text
+  base_url: http://localhost:11434
+  api_key: ""
+
+memory:
+  db_path: ~/.local/share/agent/chroma
+  default_collection: default
+
+api:
+  host: 127.0.0.1
+  port: 8000
